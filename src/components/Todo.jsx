@@ -1,6 +1,6 @@
 import { Card, CardHeader, Image } from '@nextui-org/react'
 
-function Todo ({ title, description }) {
+function Todo ({ title, description, status }) {
   return (
     <Card>
       <CardHeader className='flex gap-3'>
@@ -14,6 +14,7 @@ function Todo ({ title, description }) {
         <div className='flex flex-col'>
           <p className='text-md'>{title}</p>
           <p className='text-small text-default-500'>{description}</p>
+          <p className='text-small text-default-500'>{status}</p>
         </div>
       </CardHeader>
     </Card>
