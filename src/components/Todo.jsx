@@ -3,7 +3,7 @@ import DeleteTodo from './DeleteTodo'
 function Todo ({ title, description, status,id,onDeletion}) {
   return (
     <>
-      <Card onPress={onOpen}>
+      <Card>
         <CardHeader className='flex gap-3'>
           <Image
             alt='nextui logo'
