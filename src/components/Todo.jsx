@@ -1,9 +1,11 @@
-import { Card, CardHeader, Image } from '@nextui-org/react'
+import { Button, Card, CardHeader, Image, useDisclosure } from '@nextui-org/react'
 import DeleteTodo from './DeleteTodo'
-function Todo ({ title, description, status,id,onDeletion}) {
+import UpdateTodo from './UpdateTodo'
+function Todo ({ title, description, status,id,important,onDeletion,onUpdateTodo}) {
+  const { isOpen, onOpen, onOpenChange } = useDisclosure()
   return (
     <>
-      <Card>
+      <Card isPressable='true' onPress={onOpen}>
         <CardHeader className='flex gap-3'>
           <Image
             alt='nextui logo'
@@ -20,6 +22,17 @@ function Todo ({ title, description, status,id,onDeletion}) {
           <DeleteTodo onDeletion={onDeletion} id={id}/>
         </CardHeader>
       </Card>
+      <UpdateTodo
+                isOpen={isOpen}
+                onOpen={onOpen}
+                onOpenChange={onOpenChange}
+                title={title}
+                description={description}
+                status={status}
+                important={important}
+                id={id}
+                onUpdateTodo={onUpdateTodo}
+      />
     </>
   )
 }

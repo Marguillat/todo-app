@@ -1,5 +1,5 @@
 import Todo from './Todo'
-function TodoList ({ todos,onTodoDeletion }) {
+function TodoList ({ todos,onTodoDeletion,onUpdateTodo }) {
   return (
     <div className='flex flex-col gap-4 py-2 px-4'>
       {
@@ -11,7 +11,9 @@ function TodoList ({ todos,onTodoDeletion }) {
                   title={todo.title}
                   description={todo.description}
                   status={todo.status}
+                  important={todo.important}
                   onDeletion={onTodoDeletion}
+                  onUpdateTodo={onUpdateTodo}
               />
           )
         })
