@@ -12,7 +12,13 @@ async function addTodo (todo) {
   console.log(response)
 }
 
+async function deleteTodo (idTodo) {
+  const response = await axios.delete(API_URL + '/todos',{data:{_id:idTodo}})
+  console.log(response)
+}
+
 export {
   getTodos,
-  addTodo
+  addTodo,
+  deleteTodo
 }

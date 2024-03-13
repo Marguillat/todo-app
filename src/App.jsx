@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 import './App.css'
 import TodoList from './components/TodoList'
 import AddTodo from './components/addTodo'
-import { addTodo, getTodos } from './services/Api'
+import { addTodo, deleteTodo, getTodos } from './services/Api'
 
 function App () {
   const [todos, setTodos] = useState([]) // tableau vide pour le map avant le chargement
@@ -23,9 +23,13 @@ function App () {
     await addTodo(todo)
   }
 
+  const handleTodoDeletion = async (idTodo) => {
+    await deleteTodo(idTodo)
+  }
+
   return (
     <>
-      <TodoList todos={todos} />
+      <TodoList todos={todos} onTodoDeletion={handleTodoDeletion} />
       <AddTodo onAddTodo={handleAddTodo} />
     </>
   )
