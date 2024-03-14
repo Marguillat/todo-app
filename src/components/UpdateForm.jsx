@@ -1,13 +1,15 @@
 import { Button, Input, Select, SelectItem, Switch, Textarea } from '@nextui-org/react'
 import { useState } from 'react'
+import { useTodos } from '../hooks/todosHooks'
 
-function UpdateForm ({ onSubmit,todoId,title, description, status,important }) {
+function UpdateForm ({ todoId, title, description, status, important, onClose }) {
+  const { updateTodo } = useTodos()
   const [formData, setFormData] = useState({
     _id: todoId,
-    title: title,
-    description: description,
-    status: status,
-    important: important
+    title,
+    description,
+    status,
+    important
   })
 
   // un évènement aura une fonction qui commencera par handle
@@ -21,7 +23,8 @@ function UpdateForm ({ onSubmit,todoId,title, description, status,important }) {
 
   const handleSubmit = (event) => {
     event.preventDefault()
-    if (onSubmit) onSubmit(formData)
+    updateTodo(formData)
+    onClose()
   }
   return (
     <form

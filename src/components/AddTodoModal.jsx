@@ -1,7 +1,9 @@
-import { Button, Modal, ModalBody, ModalContent, ModalFooter, ModalHeader } from '@nextui-org/react'
+import { Modal, ModalBody, ModalContent, ModalHeader } from '@nextui-org/react'
 import TodoForm from './TodoForm'
+import { useTodos } from '../hooks/todosHooks'
 
-function AddTodoModal ({ isOpen, onOpen, onOpenChange, onAddTodo }) {
+function AddTodoModal ({ isOpen, onOpen, onOpenChange }) {
+  const { addTodo } = useTodos()
   return (
     <Modal
       isOpen={isOpen}
@@ -16,16 +18,9 @@ function AddTodoModal ({ isOpen, onOpen, onOpenChange, onAddTodo }) {
           <>
             <ModalHeader className='flex flex-col gap-1'>Ajouter une nouvelle tâche</ModalHeader>
             <ModalBody>
-              <TodoForm onSubmit={onAddTodo} />
+              <TodoForm onSubmit={addTodo} onClose={onClose} />
             </ModalBody>
-            <ModalFooter>
-              <Button color='danger' variant='light' onPress={onClose}>
-                Fermer
-              </Button>
-              <Button color='primary' onPress={onClose}>
-                Ajouter
-              </Button>
-            </ModalFooter>
+
           </>
         )}
       </ModalContent>
