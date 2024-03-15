@@ -1,5 +1,5 @@
 import { Modal, ModalBody, ModalContent, ModalHeader } from '@nextui-org/react'
-import UpdateForm from './UpdateForm'
+import UpdateForm from '../forms/UpdateForm'
 
 function UpdateTodo ({ isOpen, onOpen, onOpenChange, onUpdateTodo, title, description, status, important, id }) {
   return (

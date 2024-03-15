@@ -17,7 +17,7 @@ function CustomNavbar () {
           className='sm:hidden'
         />
         <NavbarBrand>
-          <Image src='../../public/img/menu-board.svg' />
+          <Image src='src/img/logo.svg' />
         </NavbarBrand>
       </NavbarContent>
 
@@ -44,7 +44,7 @@ function CustomNavbar () {
                     as='button'
                     className='transition-transform'
                     color='secondary'
-                    name='Jason Hughes'
+                    name='{Jason Hughes}'
                     size='sm'
                     src='https://i.pravatar.cc/150?u=a042581f4e29026704d'
                   />
@@ -52,7 +52,7 @@ function CustomNavbar () {
                 <DropdownMenu aria-label='Profile Actions' variant='flat'>
                   <DropdownItem key='profile' className='h-14 gap-2'>
                     <p className='font-semibold'>Signed in as</p>
-                    <p className='font-semibold'>zoey@example.com</p>
+                    <p className='font-semibold'>{authData._user.email}</p>
                   </DropdownItem>
                   <DropdownItem onPress={logout} key='logout' color='danger'>
                     Log Out
@@ -64,7 +64,7 @@ function CustomNavbar () {
           : (
             <NavbarContent justify='end'>
               <NavbarItem className='hidden lg:flex'>
-                <Link href='#'>Login</Link>
+                <Link href='/auth'>Login</Link>
               </NavbarItem>
               <NavbarItem>
                 <Button as={Link} color='primary' href='#' variant='flat'>

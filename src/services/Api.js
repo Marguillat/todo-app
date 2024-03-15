@@ -18,13 +18,11 @@ api.interceptors.request.use(function (config) {
 async function apiGetTodos () {
   // fetch avec axios sur l'url de l'api
   const todos = await api.get('/todos')
-  console.log(todos)
   return todos.data
 }
 
 async function apiAddTodo (todo) {
   const response = await api.post('/todos', todo)
-  console.log(response)
   return response.data
 }
 
@@ -43,10 +41,16 @@ async function apiLogin (credentials) {
   return response.data
 }
 
+async function apiRegister (credentials) {
+  const response = await api.post('/auth/register', credentials)
+  return response.data
+}
+
 export {
   apiGetTodos,
   apiAddTodo,
   apiDeleteTodo,
   apiUpdateTodo,
-  apiLogin
+  apiLogin,
+  apiRegister
 }

@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useState } from 'react'
 import { useBetween } from 'use-between'
-import { apiLogin } from '../services/Api'
+import { apiLogin, apiRegister } from '../services/Api'
 import { toast } from 'react-toastify'
 
 // hooks qui peuvent etre utilisé partout
@@ -30,6 +30,22 @@ function useAuth () {
     toast.error('Vous êtes déco')
   }, [])
 
+  const register = useCallback(async (credentials) => {
+    try {
+      setLoading(true)
+      const response = await apiRegister(credentials)
+      setAuthData(response)
+      window.localStorage.setItem('AUTH', JSON.stringify(response))// transforme objet => string
+      if (response && response.token && response._user) {
+        toast.success('vous êtes enregistré et connecté')
+      }
+    } catch (error) {
+      setError(error)
+      setLoading(false)
+      console.error(error)
+    }
+  }, [])
+
   useEffect(() => {
     const savedAuth = window.localStorage.getItem('AUTH')
     if (savedAuth) {
@@ -44,7 +60,7 @@ function useAuth () {
       window.localStorage.removeItem('AUTH')
     }
   }, [authData])// relance le composant où il est importé quand authData change de valeur
-  return { authData, loading, error, login, logout }
+  return { authData, loading, error, login, logout, register }
 }
 
 // permet de partager la valeur de la fonctin à travers tous les composants

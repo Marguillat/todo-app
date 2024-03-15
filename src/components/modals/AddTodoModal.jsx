@@ -1,6 +1,6 @@
 import { Modal, ModalBody, ModalContent, ModalHeader } from '@nextui-org/react'
-import TodoForm from './TodoForm'
-import { useTodos } from '../hooks/todosHooks'
+import TodoForm from '../forms/TodoForm'
+import { useTodos } from '../../hooks/todosHooks'
 
 function AddTodoModal ({ isOpen, onOpen, onOpenChange }) {
   const { addTodo } = useTodos()

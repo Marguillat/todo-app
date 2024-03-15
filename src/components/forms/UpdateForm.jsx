@@ -1,6 +1,6 @@
 import { Button, Input, Select, SelectItem, Switch, Textarea } from '@nextui-org/react'
 import { useState } from 'react'
-import { useTodos } from '../hooks/todosHooks'
+import { useTodos } from '../../hooks/todosHooks'
 
 function UpdateForm ({ todoId, title, description, status, important, onClose }) {
   const { updateTodo } = useTodos()

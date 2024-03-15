@@ -1,11 +1,11 @@
 import { Card, CardHeader, Image, useDisclosure } from '@nextui-org/react'
 import DeleteTodo from './DeleteTodo'
-import UpdateTodo from './UpdateTodo'
+import UpdateTodo from './modals/UpdateTodo'
 function Todo ({ title, description, status, id, important }) {
   const { isOpen, onOpen, onOpenChange } = useDisclosure()
   return (
     <>
-      <Card onPress={onOpen}>
+      <Card onPress={onOpen} isPressable>
         <CardHeader className='flex gap-3'>
           <Image
             alt='nextui logo'

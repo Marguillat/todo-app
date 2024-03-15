@@ -1,16 +1,17 @@
 import { Button, Input } from '@nextui-org/react'
 import { useState } from 'react'
-import { useAuth } from '../hooks/authHooks'
+import { useAuth } from '../../hooks/authHooks'
 
 function LoginForm () {
-  const { login } = useAuth()
+  const { login, register } = useAuth()
   const [formData, setFormData] = useState({
     email: '',
     password: ''
   })
   const handleChange = (event) => {
     setFormData({
-      ...formData, // spread opérator qui recopier tout form data
+      ...formData,
+      // spread opérator qui recopier tout form data
       // clé dynamique qui est égal à la value
       [event.target.name]: event.target.value
     })
@@ -19,7 +20,10 @@ function LoginForm () {
   const handleSubmit = (e) => {
     e.preventDefault()
     login(formData)
-    console.log('login')
+  }
+
+  const handleRegister = (e) => {
+    register(formData)
   }
 
   return (
@@ -42,8 +46,7 @@ function LoginForm () {
       <Button type='submit'>
         Se connecter
       </Button>
-      {/* <Button onPress={logout} color='danger'>se deconnecter</Button> */}
-      {/* <pre>{JSON.stringify(authData, null, 2)}</pre> */}
+      <Button onPress={handleRegister} variant='light' className='text-primary-700 font-semibold'>Créer un compte</Button>
     </form>
   )
 }

@@ -12,12 +12,12 @@ function useTodos () {
     try {
       setLoading(true)
       const todosData = await apiGetTodos()
+      setLoading(false)
       // set le todos sur la réponse de l'api
       setTodos(todosData)
-      setLoading(false)
     } catch (error) {
-      setError(error)
       setLoading(false)
+      setError(error)
       console.error(error)
     }
   }, [])

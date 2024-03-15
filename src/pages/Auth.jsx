@@ -1,11 +1,10 @@
 import { useNavigate } from 'react-router-dom'
-import LoginForm from '../components/LoginForm'
+import LoginForm from '../components/forms/LoginForm'
 import { useEffect } from 'react'
 import { useAuth } from '../hooks/authHooks'
 
 function Auth () {
   const navigate = useNavigate()
-
   const { authData } = useAuth()
   useEffect(() => {
     if (authData?.token && authData?._user) {
@@ -13,10 +12,7 @@ function Auth () {
     }
   }, [authData])
   return (
-    <>
-      <LoginForm />
-    </>
-
+    <LoginForm />
   )
 }
 
