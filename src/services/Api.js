@@ -24,9 +24,15 @@ async function apiUpdateTodo (updatedTodo) {
   return response.data
 }
 
+async function apiLogin (credentials) {
+  const response = await axios.post(API_URL + '/auth/login', credentials)
+  return response.data
+}
+
 export {
   apiGetTodos,
   apiAddTodo,
   apiDeleteTodo,
-  apiUpdateTodo
+  apiUpdateTodo,
+  apiLogin
 }
