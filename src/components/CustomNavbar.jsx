@@ -51,7 +51,7 @@ function CustomNavbar () {
                 </DropdownTrigger>
                 <DropdownMenu aria-label='Profile Actions' variant='flat'>
                   <DropdownItem key='profile' className='h-14 gap-2'>
-                    <p className='font-semibold'>Signed in as</p>
+                    <p className='font-semibold'>Enregistré avec</p>
                     <p className='font-semibold'>{authData._user.email}</p>
                   </DropdownItem>
                   <DropdownItem onPress={logout} key='logout' color='danger'>

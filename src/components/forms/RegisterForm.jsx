@@ -3,11 +3,13 @@ import { useState } from 'react'
 import { useAuth } from '../../hooks/authHooks'
 import { Link } from 'react-router-dom'
 
-function LoginForm () {
-  const { login } = useAuth()
+function RegisterForm () {
+  const { register } = useAuth()
   const [formData, setFormData] = useState({
     email: '',
-    password: ''
+    password: '',
+    firstName: '',
+    lastName: ''
   })
   const handleChange = (event) => {
     setFormData({
@@ -18,13 +20,26 @@ function LoginForm () {
     })
   }
 
-  const handleSubmit = (e) => {
-    e.preventDefault()
-    login(formData)
+  const handleSubmit = (event) => {
+    event.preventDefault()
+    register(formData)
   }
-
   return (
     <form className='flex flex-col gap-4' onSubmit={handleSubmit}>
+      <Input
+        name='lastName' // doit être egal à value
+        type='text'
+        label='Nom'
+        onChange={handleChange}
+        value={formData.lastName}
+      />
+      <Input
+        name='firstName' // doit être egal à value
+        type='text'
+        label='Prénom'
+        onChange={handleChange}
+        value={formData.firstName}
+      />
       <Input
         name='email'
         type='email'
@@ -41,11 +56,11 @@ function LoginForm () {
       />
 
       <Button type='submit'>
-        Se connecter
+        Créer un compte
       </Button>
-      <Link to='/register'>Créer un compte</Link>
+      <Link to='/auth'>Se connecter</Link>
     </form>
   )
 }
 
-export default LoginForm
+export default RegisterForm
