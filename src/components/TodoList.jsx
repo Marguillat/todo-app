@@ -1,26 +1,21 @@
-// import { useState } from 'react'
 import Todo from './Todo'
-// import { useDisclosure } from '@nextui-org/react'
-// import AddTodoModal from './AddTodoModal'
-function TodoList ({ todos }) {
-  // const [todoToEdit, setTodoToEdit] = useState()
-  // const { isOpen, onOpen, onOpenChange } = useDisclosure()
-  //
-  // const handleOpenEditModal = (todo) {
-  //   setTodoToEdit(todo)
-  //   onOpen
-  // }
 
+function TodoList ({ todos }) {
   if (!todos || todos.length < 1) {
     return (
-      <div className='w-full flex flex-row items-center justify-center py-6'>
-        <h2 className='font-bold text-lg'>Aucun todo 😞</h2>
+      <div className='w-full flex flex-col items-center justify-center py-6 max-w-[1024px] m-auto'>
+        <img
+          src='src/img/chat.svg'
+          alt='chat'
+          className='max-w-[500px] object-cover mt-20 mx-5'
+        />
+        <h2 className='font-bold text-lg mt-10'>Il n'y a rien ici, allons dormir</h2>
       </div>
     )
   }
   return (
     <>
-      <div className='flex flex-col gap-4 py-2 px-4'>
+      <div className='flex flex-col gap-4 py-2 px-4 max-w-[1024px] m-auto'>
         {
         todos.map((todo) => {
           return (

@@ -1,11 +1,15 @@
 import { Card, CardHeader, Image, useDisclosure } from '@nextui-org/react'
 import DeleteTodo from './DeleteTodo'
 import UpdateTodo from './modals/UpdateTodo'
+import ImportantWarning from './ImportantWarning'
 function Todo ({ title, description, status, id, important }) {
   const { isOpen, onOpen, onOpenChange } = useDisclosure()
   return (
     <>
-      <Card onPress={onOpen} isPressable>
+      <Card onPress={onOpen} isPressable className='mt-4 overflow-visible'>
+        {important
+          ? <ImportantWarning />
+          : <></>}
         <CardHeader className='flex gap-3'>
           <Image
             alt='nextui logo'
@@ -24,7 +28,7 @@ function Todo ({ title, description, status, id, important }) {
           </div>
         </CardHeader>
       </Card>
-      <UpdateTodo
+      <UpdateTodo // non optimisé mais c'était ma première idée
         isOpen={isOpen}
         onOpen={onOpen}
         onOpenChange={onOpenChange}
