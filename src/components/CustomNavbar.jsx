@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { Navbar, NavbarBrand, NavbarContent, NavbarItem, NavbarMenuToggle, NavbarMenu, NavbarMenuItem, Link, Button, Dropdown, DropdownTrigger, Avatar, DropdownMenu, DropdownItem, Image } from '@nextui-org/react'
 import { useAuth } from '../hooks/authHooks'
+import logo from '../img/logo.svg'
 
 function CustomNavbar () {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -17,7 +18,7 @@ function CustomNavbar () {
           className='sm:hidden'
         />
         <NavbarBrand>
-          <Image src='src/img/logo.svg' />
+          <Image src={logo} />
         </NavbarBrand>
       </NavbarContent>
 

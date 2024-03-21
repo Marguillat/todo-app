@@ -1,11 +1,11 @@
 import Todo from './Todo'
-
+import cat from '../img/chat.svg'
 function TodoList ({ todos }) {
   if (!todos || todos.length < 1) {
     return (
       <div className='w-full flex flex-col items-center justify-center py-6 max-w-[1024px] m-auto'>
         <img
-          src='src/img/chat.svg'
+          src={cat}
           alt='chat'
           className='max-w-[500px] object-cover mt-20 mx-5'
         />
