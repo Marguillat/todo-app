@@ -3,7 +3,7 @@ import { useState } from 'react'
 import { useTodos } from '../../hooks/todosHooks'
 
 function UpdateForm ({ todoId, title, description, status, important, onClose }) {
-  const { updateTodo } = useTodos()
+  const { updateTodo, loading } = useTodos()
   const [formData, setFormData] = useState({
     _id: todoId,
     title,
@@ -74,8 +74,8 @@ function UpdateForm ({ todoId, title, description, status, important, onClose })
       >
         Important
       </Switch>
-      <Button type='submit'>
-        Envoyer
+      <Button type='submit' isLoading={loading}>
+        Modifier
       </Button>
     </form>
   )

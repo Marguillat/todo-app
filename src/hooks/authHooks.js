@@ -18,6 +18,7 @@ function useAuth () {
       if (response && response.token && response._user) {
         toast.success('vous êtes connecté')
       }
+      setLoading(false)
     } catch (error) {
       setError(error)
       setLoading(false)
@@ -27,7 +28,7 @@ function useAuth () {
 
   const logout = useCallback(() => {
     setAuthData(null)
-    toast.error('Vous êtes déco')
+    toast.error('Vous êtes déconnecté')
   }, [])
 
   const register = useCallback(async (credentials) => {
@@ -39,6 +40,7 @@ function useAuth () {
       if (response && response.token && response._user) {
         toast.success('vous êtes enregistré et connecté')
       }
+      setLoading(false)
     } catch (error) {
       setError(error)
       setLoading(false)
@@ -60,6 +62,7 @@ function useAuth () {
       window.localStorage.removeItem('AUTH')
     }
   }, [authData])// relance le composant où il est importé quand authData change de valeur
+
   return { authData, loading, error, login, logout, register }
 }
 

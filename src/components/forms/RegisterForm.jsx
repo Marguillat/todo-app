@@ -4,7 +4,7 @@ import { useAuth } from '../../hooks/authHooks'
 import { Link } from 'react-router-dom'
 
 function RegisterForm () {
-  const { register } = useAuth()
+  const { register, loading } = useAuth()
   const [formData, setFormData] = useState({
     email: '',
     password: '',
@@ -55,7 +55,7 @@ function RegisterForm () {
         value={formData.password}
       />
 
-      <Button type='submit'>
+      <Button type='submit' isLoading={loading}>
         Créer un compte
       </Button>
       <Link to='/auth'>Se connecter</Link>

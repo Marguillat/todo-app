@@ -24,9 +24,11 @@ function useTodos () {
 
   const addTodo = useCallback(async (todo) => {
     try {
+      setLoading(true)
       const todosData = await apiAddTodo(todo)
       // change mes todos à chaque requette
       setTodos(todosData)
+      setLoading(false)
     } catch (error) {
       setError(error)
       setLoading(false)
@@ -36,11 +38,10 @@ function useTodos () {
 
   const deleteTodo = useCallback(async (idTodo) => {
     try {
-      console.log(idTodo)
+      setLoading(true)
       const todosData = await apiDeleteTodo(idTodo)
-      console.log(todosData)
-
       setTodos(todosData)
+      setLoading(false)
     } catch (error) {
       setError(error)
       setLoading(false)
@@ -50,8 +51,10 @@ function useTodos () {
 
   const updateTodo = useCallback(async (updatedTodo) => {
     try {
+      setLoading(true)
       const todosData = await apiUpdateTodo(updatedTodo)
       setTodos(todosData)
+      setLoading(false)
     } catch (error) {
       setError(error)
       setLoading(false)
