@@ -36,7 +36,8 @@ function TodoList ({ todos }) {
             />
           )
         })
-      }
+        }
+        {loading ? <Spinner /> : null}
       </div>
       {/* <AddTodoModal
         onUpdateTodo{onUpdateTodo}
