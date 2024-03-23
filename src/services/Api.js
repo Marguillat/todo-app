@@ -21,6 +21,11 @@ async function apiGetTodos () {
   return todos.data
 }
 
+async function apiGetTodosOfStatus (status) {
+  const todos = await api.get('/todos/' + status)
+  return todos.data
+}
+
 async function apiAddTodo (todo) {
   const response = await api.post('/todos', todo)
   return response.data
@@ -52,5 +57,6 @@ export {
   apiDeleteTodo,
   apiUpdateTodo,
   apiLogin,
-  apiRegister
+  apiRegister,
+  apiGetTodosOfStatus
 }

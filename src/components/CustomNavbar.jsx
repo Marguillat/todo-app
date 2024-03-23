@@ -11,14 +11,17 @@ function CustomNavbar () {
   const isLoggedIn = authData?.token && authData?._user
 
   return (
-    <Navbar onMenuOpenChange={setIsMenuOpen}>
+    <Navbar
+      onMenuOpenChange={setIsMenuOpen}
+      className='border-b-2 border-secondary shadow-[0_0_15px_0_rgba(153,200,224,0.45)]'
+    >
       <NavbarContent>
         <NavbarMenuToggle
           aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
           className='sm:hidden'
         />
         <NavbarBrand>
-          <Image src={logo} />
+          <Image src={logo} className='rounded-none' />
         </NavbarBrand>
       </NavbarContent>
 

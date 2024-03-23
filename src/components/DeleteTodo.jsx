@@ -11,11 +11,10 @@ function DeleteTodo ({ id }) {
     <Button
       onPress={handleDelete}
       isIconOnly
-      color='danger'
+      className='bg-orange'
       aria-label='Delete'
     >
       <FaDeleteLeft
-        color='danger'
         className='w-10'
       />
     </Button>

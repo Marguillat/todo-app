@@ -31,6 +31,25 @@ export default {
               950: '#1b194d',
               DEFAULT: '#b0c1ff',
               foreground: 'DEFAULT'
+            },
+            secondary: {
+              50: '#f3f8fc',
+              100: '#e7f1f7',
+              200: '#c9e0ee',
+              300: '#99c8e0',
+              400: '#62abce',
+              500: '#3e91b9',
+              600: '#2d749c',
+              700: '#265e7e',
+              800: '#235069',
+              900: '#224358',
+              950: '#162b3b',
+              DEFAULT: '#99c8e0'
+            },
+            orange: {
+              light: '#E8A454',
+              strong: '#E88054',
+              DEFAULT: '#E8A454'
             }
           }
         },

@@ -6,22 +6,27 @@ function Todo ({ title, description, status, id, important }) {
   const { isOpen, onOpen, onOpenChange } = useDisclosure()
   return (
     <>
-      <Card onPress={onOpen} isPressable className='mt-4 overflow-visible'>
+      <Card
+        shadow='none'
+        onPress={onOpen} isPressable
+        className='mt-4 overflow-visible flex-1 bg-secondary-100 border-2 border-secondary-300'
+      >
         {important
           ? <ImportantWarning />
           : <></>}
         <CardHeader className='flex gap-3'>
           <Image
+            className='flex-grow'
             alt='nextui logo'
             height={40}
             radius='sm'
             src='https://avatars.githubusercontent.com/u/86160567?s=200&v=4'
             width={40}
           />
-          <div className='flex justify-start items-start flex-col flex-grow'>
-            <p className='text-md'>{title}</p>
-            <p className='text-small text-default-500'>{description}</p>
-            <p className='text-small text-default-500'>{status}</p>
+          <div className='flex justify-start items-start flex-col flex-grow max-w-[calc(100%-80px-(2*0.75rem))]'>
+            <p className='text-md truncate w-[100%] text-left font-main'>{title}</p>
+            <p className='text-small text-default-500 truncate w-[100%] text-left'>{description}</p>
+            <p className='text-small text-default-500 truncate w-[100%] text-left'>{status}</p>
           </div>
           <div className='flex flex-col'>
             <DeleteTodo id={id} />

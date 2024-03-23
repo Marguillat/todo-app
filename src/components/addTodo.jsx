@@ -6,7 +6,7 @@ function AddTodo () {
   return (
     <>
       <Button
-        className='fixed bottom-8 right-8 w-16 h-16'
+        className='fixed bottom-8 right-8 w-16 h-16 z-20'
         radius='full'
         color='primary'
         isIconOnly
