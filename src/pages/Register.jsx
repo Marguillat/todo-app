@@ -13,7 +13,9 @@ function Register () {
     }
   }, [authData])
   return (
-    <RegisterForm />
+    <div className='px-4 py-4 m-auto max-w-[1024px]'>
+      <RegisterForm />
+    </div>
   )
 }
 

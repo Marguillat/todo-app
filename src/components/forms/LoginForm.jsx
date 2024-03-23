@@ -43,7 +43,7 @@ function LoginForm () {
       <Button type='submit' isLoading={loading}>
         Se connecter
       </Button>
-      <Link to='/register'>Créer un compte</Link>
+      <Link to='/register' className='m-auto hover:underline'>Créer un compte</Link>
     </form>
   )
 }

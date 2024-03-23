@@ -58,7 +58,7 @@ function RegisterForm () {
       <Button type='submit' isLoading={loading}>
         Créer un compte
       </Button>
-      <Link to='/auth'>Se connecter</Link>
+      <Link to='/auth' className='m-auto hover:underline'>Se connecter</Link>
     </form>
   )
 }
