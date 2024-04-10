@@ -1,5 +1,7 @@
 # Web app de gestion de tâches
 
+Lien du projet hébergé sur vercel : [Todoom](https://todo-app-seven-rose.vercel.app/)
+
 Voici la partie front d'une petite appli React réalisée dans le but d'apprendre le "framework", 
 Les librairies annexes principales sont : 
 * NextUI - pour l'utilisation de composants préfaits
