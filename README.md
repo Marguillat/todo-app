@@ -1,8 +1,9 @@
-# React + Vite
+# Web app de gestion de tâches
+## objectifs : 
+* apprendre React
+  * Hooks personnalisés
+  * Réactivité
+  * syntax JSX
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+* Comparer le workflow entre Vue et React
 
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
