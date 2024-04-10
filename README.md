@@ -1,6 +1,6 @@
 # Web app de gestion de tâches
 
-Voici la partie front d'une petite appli React réalisé dans le but d'apprendre le "framework", 
+Voici la partie front d'une petite appli React réalisée dans le but d'apprendre le "framework", 
 Les librairies annexes principales sont : 
 * NextUI - pour l'utilisation de composants préfaits
 * Tailwind - on ne le présente plus
